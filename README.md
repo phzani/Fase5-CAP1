@@ -48,3 +48,67 @@ O notebook contém uma documentação detalhada de cada etapa, incluindo:
 
 ## Vídeo Demonstrativo
 [Clique aqui para assistir à demonstração](https://youtu.be/51HRzj52Fgw)
+
+## Entrega 2 — Hospedagem em Nuvem (AWS)
+
+# Comparação de Custos AWS (EC2)
+
+## Configuração Utilizada
+- **Instância:** t3.micro (2 vCPUs, 1 GiB RAM)  
+- **Rede:** até 5 Gbps  
+- **Armazenamento:** 50 GB EBS  
+- **Sistema Operacional:** Linux  
+- **Modelo de preços:** On-Demand (100% utilização mensal)  
+
+---
+
+## Estimativa de Custos
+
+### 📍 Região US East (N. Virginia – EUA)
+Virginia: <img width="711" height="588" alt="image" src="https://github.com/user-attachments/assets/ead2ac2b-92ea-42e2-a813-e7d9206f6847" />
+
+- **Custo inicial:** USD 0,00  
+- **Custo mensal:** USD 12,03  
+- **Custo anual:** USD 144,36  
+
+---
+
+### 📍 Região South America (São Paulo – BR)
+SP: <img width="713" height="580" alt="image" src="https://github.com/user-attachments/assets/cece037b-3a83-49b1-9e38-e03237e089d1" />
+
+- **Custo inicial:** USD 0,00  
+- **Custo mensal:** USD 1.480,52  
+- **Custo anual:** USD 17.766,24  
+
+---
+
+## Comparativo de Custos
+
+| Região           | Custo Mensal (USD) | Custo Anual (USD) |
+|------------------|---------------------|-------------------|
+| US East (EUA)    | **12,03**           | **144,36**        |
+| São Paulo (BR)   | **1.480,52**        | **17.766,24**     |
+
+💡 Diferença de **~147x mais caro** ao escolher São Paulo em vez de Virgínia.
+
+---
+
+## Justificativa Técnica
+
+1. **Acesso rápido aos dados dos sensores**  
+   - Se os sensores estiverem no Brasil, usar São Paulo reduz latência de rede.  
+   - Mas se a aplicação tolera um pequeno delay (ms a mais), Virgínia pode ser suficiente.  
+
+2. **Restrições legais para armazenamento no exterior**  
+   - Caso a legislação ou compliance da empresa exija **dados no território nacional**, a opção **São Paulo** é obrigatória (mesmo com custo elevado).  
+   - Se **não houver essa restrição**, a opção **Virgínia** é muito mais viável financeiramente.  
+
+3. **Análise crítica**  
+   - **São Paulo**: garante baixa latência local + compliance, mas a um custo proibitivo.  
+   - **Virgínia**: entrega os mesmos recursos técnicos por uma fração do preço, com latência ainda aceitável para a maioria dos casos de IoT/telemetria.  
+
+---
+
+## Conclusão
+
+👉 **Opção recomendada:** **US East (Virgínia – EUA)**, salvo se houver **restrição legal** que obrigue armazenar/processar no Brasil.
